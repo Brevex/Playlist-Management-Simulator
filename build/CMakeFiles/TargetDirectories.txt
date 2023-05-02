@@ -1,0 +1,3 @@
+D:/Projetos/Playlist-Maneger/build/CMakeFiles/Gerenciador.dir
+D:/Projetos/Playlist-Maneger/build/CMakeFiles/edit_cache.dir
+D:/Projetos/Playlist-Maneger/build/CMakeFiles/rebuild_cache.dir
