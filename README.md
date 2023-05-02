@@ -23,7 +23,7 @@
 <ul>
 
 <li> Tive que refazer o trabalho do zero devido ao uso incoerente de "smart pointers" </li>
-<li> Achei a criação dos métodos para gerenciar playlists foi particularmente complicado </li>
+<li> Achei a criação dos métodos para gerenciar playlists particularmente complicado </li>
 <li> Fazer a lista ligada para as músicas funcionar </li>
 <li> Gerenciar ponteiros </li>
 
