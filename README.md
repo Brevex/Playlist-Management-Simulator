@@ -6,7 +6,7 @@
 
 <h3> - Como executar o programa - </h3>
 
-<P> Na pasta "/build" você vai o arquivo executável chamado "Gerenciador". Basta dar duplo clique no executável e usar o programa. </p>
+<P> Na pasta "/build" você vai encontrar o arquivo executável chamado "Gerenciador". Basta dar duplo clique no executável e usar o programa. </p>
 
 <h3> - Limitações do programa - </h3>
 
