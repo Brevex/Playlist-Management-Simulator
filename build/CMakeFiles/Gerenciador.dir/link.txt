@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\Gerenciador.dir/objects.a
-C:\msys64\mingw64\bin\ar.exe qc CMakeFiles\Gerenciador.dir/objects.a @CMakeFiles\Gerenciador.dir\objects1.rsp
-C:\msys64\mingw64\bin\c++.exe -Wl,--whole-archive CMakeFiles\Gerenciador.dir/objects.a -Wl,--no-whole-archive -o Gerenciador.exe -Wl,--out-implib,libGerenciador.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Gerenciador.dir\linkLibs.rsp
