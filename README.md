@@ -13,7 +13,7 @@
 <ul>
 
 <li> Músicas de playlists são listadas como endereço de memória </li>
-<li> Esporadicamente ocorro um "crash" ao listar músicas do sistema </li>
+<li> Esporadicamente ocorre um "crash" ao listar músicas do sistema </li>
 <li> Programa não consegue lidar com caracteres especiais e acentuação local </li>
 
 </ul>
