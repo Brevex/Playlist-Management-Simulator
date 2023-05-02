@@ -2,7 +2,7 @@
 #define PLAYLISTMANAGER_H
 
 #include <vector>
-#include "Playlist.h"
+#include "playlist.h"
 
 class PlaylistManager
 {

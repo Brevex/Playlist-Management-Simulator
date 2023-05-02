@@ -1,7 +1,7 @@
 #ifndef NOPLAYLIST_H
 #define NOPLAYLIST_H
 
-#include "Musica.h"
+#include "musica.h"
 
 class NoPlaylist
 {
