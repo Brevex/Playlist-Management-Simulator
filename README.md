@@ -1,7 +1,5 @@
 <h1 align="center"> Playlist-Manager </h1>
 
-<h1 align="center"> Breno Barbosa de Oliveira </h1>
-
 <p align="center"> Programa em C++ que gerencia músicas e playlists usando lista encadeada simples. Projeto do bacharelado em TI, matéria de Linguagem de Programação I.</p>
 
 <h3> - Como executar o programa - </h3>
@@ -90,3 +88,6 @@ deseja executar. As funções são listadas de (1 - 11), sendo elas: <br><br>1- 
 <p>Move uma música de uma playlist para outra. Esse método pede ao usuário para que ele insira o nome da playlist de origem, playlist de destino e título da música. Esse método percorre a lista ligada de músicas da playlist de origem e identifica a música inserida para poder move-la até a playlist de destino.<br><br>Exemplo:<br><br>Insira o nome da playlist de origem: Nome 1<br>Insira o nome da playlist de destino: Nome 2<br>Insira o título da música: Título<br><br>Esse método possui um sistema de verificação que retorna uma mensagem de erro caso alguns dos campos estejam em branco, ou se alguma das playlists ou música inseridas não existam.</p>
 
 </ol>
+<br>
+
+<h5 align="center">by Breno</h5>
