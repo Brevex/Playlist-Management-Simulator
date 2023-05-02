@@ -4,7 +4,7 @@
 
 <h3> - Como executar o programa - </h3>
 
-<P> Na pasta "/build" você vai encontrar o arquivo executável chamado "Gerenciador". Basta dar duplo clique no executável e usar o programa. </p>
+<P> Dentro da pasta com os arquivos do programa entre na pasta "build" e copie o endereço em que a pasta se localiza. Em seguida, abra o terminal e execute o comando "cd /caminho" para entrar na pasta build pelo terminal. Por fim, execute o comando "cmake .." e aguarda e comando rodar para depois inserir "make". Para executar o programa no Windows basta dar duplo clique no arquivo executável, caso esteja no Linux abra o terminal dentro da pasta "build" e execute "./Gerenciador". Para executar esses comandos é necessário ter o programa CMake instalado no computador. </p>
 
 <h3> - Limitações do programa - </h3>
 
