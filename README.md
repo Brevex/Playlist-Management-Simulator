@@ -1,4 +1,4 @@
-<h1 align="center"> Playlist-Maneger </h1>
+<h1 align="center"> Playlist-Manager </h1>
 
 <h1 align="center"> Breno Barbosa de Oliveira - 20220021749 </h1>
 
