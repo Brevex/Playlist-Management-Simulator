@@ -1,6 +1,6 @@
 <h1 align="center"> Playlist-Manager </h1>
 
-<h1 align="center"> Breno Barbosa de Oliveira - 20220021749 </h1>
+<h1 align="center"> Breno Barbosa de Oliveira </h1>
 
 <p align="center"> Programa em C++ que gerencia músicas e playlists usando lista encadeada simples. Projeto do bacharelado em TI, matéria de Linguagem de Programação I.</p>
 
