@@ -2,7 +2,7 @@
 
 <h1 align="center"> Breno Barbosa de Oliveira - 20220021749 </h1>
 
-<p align="center"> Programa em C++ que gerencia músicas e playlists usando lista encadeada simples. </p>
+<p align="center"> Programa em C++ que gerencia músicas e playlists usando lista encadeada simples. Projeto do bacharelado em TI.</p>
 
 <h3> - Como executar o programa - </h3>
 
