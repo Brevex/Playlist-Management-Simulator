@@ -14,6 +14,10 @@
 
 <p>Em uma pasta qualquer, extraia os arquivos do .zip que você baixou desse repositório e abra a pasta "build". Clique com o botão direito do mouse dentro da pasta "build" e selecione a opção "abrir no terminal". Insira o comando "cmake .." e espere o processo ser finalizado. Por fim, insira o comando "make" e o executável será gerado. Com o terminal ainda aberto na pasta "build" digite "./Gerenciador" e use o programa.</p>
 
+<li>Requisitos (qualquer sistema) </li>
+
+<p>Para poder usar esses comando, é necessário ter o programa "CMake" instalado em seu computador.</p>
+
 </ul>
 
 <h3> - Limitações do programa - </h3>
