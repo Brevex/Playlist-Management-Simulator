@@ -8,14 +8,17 @@
 
 <li> Windows </li>
 
+<br>
 <p>Em uma pasta qualquer, extraia os arquivos do .zip que você baixou desse repositório e abra a pasta "build". Copie o endereço em que essa pasta está salva e abra o terminal para digitar o comando "cd /caminho". Em seguida, insira o comando "cmake .. -G "MinGW Makefiles" e espere o comando finalizar. Por fim, insira o comando "cmake --build ." para gerar o executável. Dê duplo clique no executável e use o programa.</p>
 
 <li> Linux </li>
 
+<br>
 <p>Em uma pasta qualquer, extraia os arquivos do .zip que você baixou desse repositório e abra a pasta "build". Clique com o botão direito do mouse dentro da pasta "build" e selecione a opção "abrir no terminal". Insira o comando "cmake .." e espere o processo ser finalizado. Por fim, insira o comando "make" e o executável será gerado. Com o terminal ainda aberto na pasta "build" digite "./Gerenciador" e use o programa.</p>
 
 <li>Requisitos (qualquer sistema) </li>
 
+<br>
 <p>Para poder usar esses comando, é necessário ter o programa "CMake" instalado em seu computador.</p>
 
 </ul>
