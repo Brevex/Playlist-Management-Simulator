@@ -1,7 +1,6 @@
 <h1 align="center">Breno Barbosa de Oliveira</h1>
-<hr/>
+
 <h1 align="center">20220021749</h1>
-<hr/>
 
 </br>
 
