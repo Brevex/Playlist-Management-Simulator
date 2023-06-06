@@ -14,7 +14,9 @@ class Playlist
     public:
 
         // Construtor
+        Playlist();
         Playlist(std::string nomeDaPlaylist);
+        Playlist(const Playlist& outraPlaylist);
 
         // Destrutor
         ~Playlist();
@@ -27,11 +29,13 @@ class Playlist
         void setListaDeMusicas(Lista<Musica> *listaDeMusicas);
         void setNomeDaPlaylist(std::string nomeDaPlaylist);
 
-        // Insere uma música na playlist
+        // Métodos de inserir músicas na playlist
         void inserirMusica(Musica *musica);
+        void addListaMusicas(Lista<Musica>& listaMusicas);
 
-        // Remove uma música da playlist 
+        // Métodos de remover músicas da playlist 
         void removerMusica(Musica *musica);
+        void removerListaMusicas(Lista<Musica>& listaMusicas);
 
         // Operador de comparacao
         bool operator==(const Playlist& outraPlaylist) const;
@@ -41,6 +45,12 @@ class Playlist
 
         // Verifica se playlist esta vazia
         bool estaVazia();
+
+        // Faz união de duas playlists
+        Playlist unirPlaylists(Playlist& playlist1, Playlist& playlist2);
+
+        // Remove músicas repetidas da playlist
+        void removerMusicasRepetidas();
 };
 
 #endif

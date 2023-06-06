@@ -18,6 +18,19 @@ template <typename T> class Lista
         // Construtor
         Lista() : head(nullptr), tail(nullptr), size(0) {}
 
+        // Construtor cópia (requisito da parte 2 do projeto)
+        Lista(Lista<T>& outraLista) : head(nullptr), tail(nullptr), size(0)
+        {
+            Node<T>* aux = outraLista.getHead();
+
+            // Percorre a lista recebida e insere cada elemento na nova lista
+            while (aux != nullptr)
+            {
+                inserirNaLista(aux -> getData());
+                aux = aux -> getNext();
+            }
+        }
+
         // Destrutor
         ~Lista()
         {
@@ -82,6 +95,19 @@ template <typename T> class Lista
 
             size++;
         }
+        
+        // Insere uma lista ligada de elementos a lista atual (requisito da parte 2 do projeto)
+        void addElementos(Lista<T>& lista)
+        {
+            Node<T>* aux = lista.getHead();
+
+            // Percorre a lista recebida e insere cada elemento na lista atual
+            while (aux != nullptr)
+            {
+                inserirNaLista(aux -> getData());
+                aux = aux -> getNext();
+            }
+        }
 
         // Remove um elemento da lista
         void removerDaLista(T* data)
@@ -124,6 +150,19 @@ template <typename T> class Lista
     
             // Decrementa o tamanho da lista em -1
             size--;
+        }
+
+        // Recebe uma lista ligada de elementos que devem ser removidos da lista atual (requisito da parte 2 do projeto)
+        void removerElementos(Lista<T>& lista)
+        {
+            Node<T>* aux = lista.getHead();
+
+            // Percorre a lista recebida e remove cada elemento da lista atual
+            while (aux != nullptr)
+            {
+                removerDaLista(aux -> getData());
+                aux = aux -> getNext();
+            }
         }
 
         // Confere se a lista está vazia
@@ -173,6 +212,77 @@ template <typename T> class Lista
             else
             {
                 return true;
+            }
+        }
+
+        // Operador de concatenação (requisito da parte 2 do projeto)
+        Lista<T> operator+(Lista<T>& outraLista)
+        {
+            Lista<T> novaLista(*this); // Cria uma cópia da lista atual
+
+            Node<T>* aux = outraLista.getHead();
+
+            // Percorre a lista recebida e insere cada elemento na nova lista
+            while (aux != nullptr)
+            {
+                novaLista.inserirNaLista(aux -> getData());
+                aux = aux -> getNext();
+            }
+
+            return novaLista;
+        }
+
+        // Operador de extração (requisito da parte 2 do projeto)
+        friend Lista<T>& operator>>(Lista<T>& lista, Node<T>*& no)
+        {
+            if (!lista.estaVazia())
+            {
+                T valor = lista.getTail() -> getData(); // Obtém o valor do último elemento
+                lista.removerDaLista(valor); // Remove o último elemento da lista
+                no = new Node<T>(valor); // Cria um novo nó com o valor do último elemento
+            }
+            else
+            {
+                no = nullptr; // A lista está vazia, atribui nullptr ao nó
+            }
+
+            return lista;
+        }
+
+        // Operador de inserção (requisito da parte 2 do projeto)
+        friend Lista<T>& operator<<(Lista<T>& lista, Node<T>*& no)
+        {
+            if (no != nullptr)
+            {
+                lista.inserirNaLista(no -> getData()); // Insere o valor do nó no fim da lista
+            }
+
+            return lista;
+        }
+
+        // Remove elementos repetidos da lista
+        void removerRepetidos()
+        {
+            Node<T>* aux = head;
+
+            // Percorre a lista
+            while (aux != nullptr)
+            {
+                Node<T>* aux2 = aux -> getNext();
+
+                // Percorre a lista a partir do elemento seguinte ao elemento atual
+                while (aux2 != nullptr)
+                {
+                    // Se o elemento atual for igual ao elemento seguinte, remove o elemento seguinte
+                    if (aux -> getData() == aux2 -> getData())
+                    {
+                        removerDaLista(aux2 -> getData());
+                    }
+
+                    aux2 = aux2 -> getNext();
+                }
+
+                aux = aux -> getNext();
             }
         }
 };
