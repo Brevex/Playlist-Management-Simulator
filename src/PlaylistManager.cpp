@@ -238,28 +238,44 @@ void delSongSystemPlaylist(System& mainSystem) // Delete song from playlist
 {
     std::string songName, playlistName;
 
-    mainSystem.printSystemSongs(); // Print current system songs
     mainSystem.printSystemPlaylists(); // Print current system playlists
-
     std::cout << std::endl;
-
-    std::cout << "Enter the song name: ";
-    std::getline (std::cin, songName);
 
     std::cout << "Enter the playlist name: ";
     std::getline (std::cin, playlistName);
 
     // Check if input is valid (blank or empty)
-    if (!isBlankOrSpaces(songName) && !isBlankOrSpaces(playlistName))
+    if (!isBlankOrSpaces(playlistName))
     {
-        // Search for the song and playlist on the system
-        Music foundSong = mainSystem.searchSongByName(songName);
+        // Search for the playlist on the system
         Playlist foundPlaylist = mainSystem.searchPlaylistByName(playlistName);
 
-        // Remove the song from the playlist if it exists
-        if (foundSong.getMusicTitle() == songName && foundPlaylist.getPlaylistName() == playlistName)
+        if (foundPlaylist.getPlaylistName() == playlistName)
         {
-            mainSystem.removeSongFromPlaylist(foundSong, foundPlaylist);
+            std::cout << std::endl;
+            foundPlaylist.listSongs(); // Print current playlist songs
+
+            std::cout << "Enter the song name: ";
+            std::getline (std::cin, songName);
+
+            // Check if input is valid (blank or empty)
+            if (!isBlankOrSpaces(songName))
+            {
+                // Search for the song on the playlist
+                Music foundSong = mainSystem.searchSongByName(songName);
+
+                // Remove the song from the playlist if it exists
+                if (foundSong.getMusicTitle() == songName)
+                {
+                    mainSystem.removeSongFromPlaylist(foundSong, foundPlaylist);
+                }
+            }
+            else
+            {
+                std::cout << std::endl;
+                std::cout << "The entry cannot be left blank." << std::endl;
+                std::cout << std::endl;
+            }
         }
     }
     else

@@ -1,3 +1,0 @@
-/home/breno/Documentos/Playlist-Management-Simulator/cmake-build-debug/CMakeFiles/manager.dir
-/home/breno/Documentos/Playlist-Management-Simulator/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/breno/Documentos/Playlist-Management-Simulator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
