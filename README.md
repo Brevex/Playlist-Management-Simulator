@@ -11,7 +11,7 @@ for the subject Programming Language I. This is a program made in C++ that simul
 does not deal with real music files, it just creates objects that represent a song using a title 
 and the name of the artist/band. You can create playlist, manage music and run created playlists.</p>
 
-![PROGRAM-LAYOUT](https://github.com/Brevex/Playlist-Management-Simulator/blob/main/readme%20images/program-layout.png)
+<br>
 
 <h2> &#128296; Dependencies and Execution </h2>
 
