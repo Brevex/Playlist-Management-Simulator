@@ -1,56 +1,53 @@
 #ifndef PLAYLIST_H
 #define PLAYLIST_H
 
-#include "Musica.h"
-#include "Lista.h"
+#include "Music.h"
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <utility>
+#include <stdexcept>
 
 class Playlist
 {
-    private:
 
-        std::string nomeDaPlaylist;
-        Lista<Musica> *listaDeMusicas;
+private: // private member variables to store playlist information
 
-    public:
+    std::string playlistName;
+    std::vector <Music> songs;
 
-        // Construtor
-        Playlist();
-        Playlist(std::string nomeDaPlaylist);
-        Playlist(const Playlist& outraPlaylist);
+public: // Public methods
 
-        // Destrutor
-        ~Playlist();
+    // ------------ Playlist class constructor ------------
 
-        // Getters
-        std::string getNomeDaPlaylist();
-        Lista<Musica> *getListaDeMusicas();
+    explicit Playlist(std::string name);
 
-        // Setters
-        void setListaDeMusicas(Lista<Musica> *listaDeMusicas);
-        void setNomeDaPlaylist(std::string nomeDaPlaylist);
+    // ---------- Playlist music vector getter  -----------
 
-        // Métodos de inserir músicas na playlist
-        void inserirMusica(Musica *musica);
-        void addListaMusicas(Lista<Musica>& listaMusicas);
+    std::vector <Music>& getSongs();
 
-        // Métodos de remover músicas da playlist 
-        void removerMusica(Musica *musica);
-        void removerListaMusicas(Lista<Musica>& listaMusicas);
+    // --------- Playlist name getter and setter ----------
 
-        // Operador de comparacao
-        bool operator==(const Playlist& outraPlaylist) const;
+    std::string getPlaylistName(); // Getter
+    void setPlaylistName(std::string name); // Setter
 
-        // Verifica se musica esta na playlist
-        bool estaNaPlaylist(Musica *musica);
+    // -------- Add and remove songs from playlist --------
 
-        // Verifica se playlist esta vazia
-        bool estaVazia();
+    void addSong(Music& song);
+    void removeSong(Music& song);
 
-        // Faz união de duas playlists
-        Playlist unirPlaylists(Playlist& playlist1, Playlist& playlist2);
+    // ---------------- List playlist songs ---------------
 
-        // Remove músicas repetidas da playlist
-        void removerMusicasRepetidas();
+    void listSongs();
+
+    // ---------- Check if the playlist is empty ----------
+
+    bool isEmpty();
+
+    // ------- Check if music exist in the playlist -------
+
+    bool isSongInPlaylist(Music& song);
 };
 
-#endif
+#endif //PLAYLIST_H

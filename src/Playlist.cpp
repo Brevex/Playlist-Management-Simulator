@@ -1,115 +1,96 @@
 #include "../include/Playlist.h"
 
-// Construtor padrão da classe, define o nome da playlist como "Sem nome" e cria uma lista de músicas vazia
-Playlist::Playlist()
+// ------------ Playlist class constructor ------------
+
+Playlist::Playlist(std::string name) : playlistName(std::move(name)), songs() {}
+
+// ---------- Playlist music vector getter  -----------
+
+std::vector <Music>& Playlist::getSongs()
 {
-    nomeDaPlaylist = "";
-    listaDeMusicas = new Lista<Musica>();
+    return songs;
 }
 
-// Construtor da classe, define o nome da playlist e cria uma lista de músicas vazia
-Playlist::Playlist(std::string nomeDaPlaylist) : nomeDaPlaylist(nomeDaPlaylist), listaDeMusicas(new Lista<Musica>()) {}
+// --------- Playlist name getter and setter ----------
 
-// Construtor cópia da classe, copia o nome da playlist e a lista de músicas (requisito da parte 2 do projeto)
-Playlist::Playlist(const Playlist& outraPlaylist)
+std::string Playlist::getPlaylistName() // Getter
 {
-    nomeDaPlaylist = outraPlaylist.nomeDaPlaylist;
-    listaDeMusicas = new Lista<Musica>(*outraPlaylist.listaDeMusicas);
+    return playlistName;
 }
 
-// Destrutor da classe, deleta a lista de músicas
-Playlist::~Playlist() 
+void Playlist::setPlaylistName(std::string name) // Setter
 {
-    delete listaDeMusicas;
+    playlistName = std::move(name);
 }
 
-// Retorna o nome da playlist
-std::string Playlist::getNomeDaPlaylist() 
+// -------- Add and remove songs from playlist --------
+
+void Playlist::addSong(Music& song) // Add song
 {
-    return nomeDaPlaylist;
+    songs.push_back(song);
 }
 
-// Retorna a lista de músicas
-Lista<Musica> *Playlist::getListaDeMusicas() 
+void Playlist::removeSong(Music& song) // Remove
 {
-    return listaDeMusicas;
+    // Check if the playlist is empty before attempting removal
+    if (isEmpty())
+    {
+        std::cout << std::endl;
+        throw std::runtime_error("The playlist is empty.");
+    }
+
+    // Delete song from playlist
+    songs.erase(std::remove_if(songs.begin(), songs.end(), [&song](Music& item)
+    {
+        return item.getMusicTitle() == song.getMusicTitle() && item.getArtistName() == song.getArtistName();
+    }), songs.end());
 }
 
-// Define a lista de músicas
-void Playlist::setListaDeMusicas(Lista<Musica> *listaDeMusicas) 
+// ---------------- List playlist songs ---------------
+
+void Playlist::listSongs()
 {
-    this -> listaDeMusicas = listaDeMusicas;
+    std::cout << "Playlist: " << playlistName << std::endl;
+    std::cout << std::endl;
+
+    // Check if the playlist is empty
+    if (isEmpty())
+    {
+        std::cout << "The playlist is empty." << std::endl;
+        std::cout << std::endl;
+    }
+    else
+    {
+        // Loop on songs vector
+        for (Music& song : songs)
+        {
+            std::cout << "| " << song.getMusicTitle() << " - " << song.getArtistName() << std::endl;
+        }
+
+        std::cout << std::endl;
+    }
 }
 
-// Define o nome da playlist
-void Playlist::setNomeDaPlaylist(std::string nomeDaPlaylist) 
+// ---------- Check if the playlist is empty ----------
+
+bool Playlist::isEmpty()
 {
-    this -> nomeDaPlaylist = nomeDaPlaylist;
+    return songs.empty();
 }
 
-// Insere uma música na playlist
-void Playlist::inserirMusica(Musica *musica) 
+// ------- Check if music exist in the playlist -------
+
+bool Playlist::isSongInPlaylist(Music& song)
 {
-    listaDeMusicas -> inserirNaLista(musica);
-}
+    // Loop through the songs
+    for (Music& playlistSong : songs)
+    {
+        // Check if music title and artist name are equal to the current song on the loop
+        if(playlistSong.getMusicTitle() == song.getMusicTitle() && playlistSong.getArtistName() == song.getArtistName())
+        {
+            return true;
+        }
+    }
 
-// Adiciona uma lista de músicas na playlist (requisito da parte 2 do projeto)
-void Playlist::addListaMusicas(Lista<Musica>& listaMusicas) 
-{
-    listaDeMusicas -> addElementos(listaMusicas);
-}
-
-// Remove uma música da playlist usando método removeDaLista da classe Lista
-void Playlist::removerMusica(Musica *musica) 
-{
-    listaDeMusicas -> removerDaLista(musica);
-}
-
-// Remove todas as músicas da playlist atual que estejam na lista recebida por parâmetro (requisito da parte 2 do projeto)
-void Playlist::removerListaMusicas(Lista<Musica>& listaMusicas)
-{
-    listaDeMusicas -> removerElementos(listaMusicas);
-}
-
-// Operador de comparacao
-bool Playlist::operator==(const Playlist& outraPlaylist) const 
-{
-    return this -> nomeDaPlaylist == outraPlaylist.nomeDaPlaylist;
-}
-
-// Verifica se musica esta na playlist
-bool Playlist::estaNaPlaylist(Musica *musica) 
-{
-    return listaDeMusicas -> estaNaLista(musica);
-}
-
-// Verifica se playlist esta vazia
-bool Playlist::estaVazia() 
-{
-    return listaDeMusicas -> estaVazia();
-}
-
-// Une duas playlists em uma nova playlist (requisito da parte 2 do projeto)
-Playlist Playlist::unirPlaylists(Playlist& playlist1, Playlist& playlist2)
-{
-    // Cria uma nova playlist com o nome da playlist1
-    Playlist playlistUnida(playlist1.nomeDaPlaylist);
-
-    // Adiciona as músicas da playlist1 na playlist unida
-    playlistUnida.addListaMusicas(*playlist1.listaDeMusicas);
-
-    // Adiciona as músicas da playlist2 na playlist unida
-    playlistUnida.addListaMusicas(*playlist2.listaDeMusicas);
-
-    // Remove as músicas repetidas da playlist unida
-    playlistUnida.listaDeMusicas -> removerRepetidos();
-
-    // Retorna a playlist unida
-    return playlistUnida;
-}
-
-// Remove músicas repetidas da playlist
-void Playlist::removerMusicasRepetidas()
-{
-    listaDeMusicas -> removerRepetidos();
+    return false;
 }
