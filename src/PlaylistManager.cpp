@@ -87,7 +87,7 @@ int main(int argc, char* args[])
     return 0;
 }
 
-// -------------------- Implementation of functions --------------------
+// -------------------- Functions implementation --------------------
 
 void addSongSystem(System& mainSystem) // Add a song to system
 {
