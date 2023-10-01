@@ -1,0 +1,3 @@
+To compile and run this program on your machine, you will need CMake and the code compiler for C/C++, which can be gcc or g++. To create the executable go to the "build" folder, right click and open the terminal inside that folder. With the terminal open, type "cmake.." and press enter, then type "make" and hit enter again. Finally, type "./manager" to run the program.
+
+
