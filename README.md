@@ -13,6 +13,8 @@ and the name of the artist/band. You can create playlist, manage music and run c
 
 <br>
 
+![PROGRAM-LAYOUT](https://github.com/Brevex/Playlist-Management-Simulator/blob/main/readme%20images/program-layout.png)
+
 <h2> &#128296; Dependencies and Execution </h2>
 
 <br>
