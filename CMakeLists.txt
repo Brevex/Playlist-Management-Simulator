@@ -1,27 +1,28 @@
 cmake_minimum_required(VERSION 3.0)
 
-# Nome do seu projeto
-project(gerenciador)
+# Project name
+project(playlistManager)
 
-# Arquivos de origem
+# Source files
 set(SOURCES
-src/Gerenciador.cpp
-src/Musica.cpp
-src/Playlist.cpp)
+src/PlaylistManager.cpp
+src/Music.cpp
+src/Playlist.cpp
+src/System.cpp)
 
-# Diretorios de inclusão
+# Inclusion directories
 include_directories(include)
 
-# Adiciona a flag de depuração "-g" ao compilar com o GCC ou Clang
+# Add the "-g" debug flag when compiling with GCC or Clang
 if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
 endif()
 
-# Adiciona a flag de depuração "/DEBUG" ao compilar com o MSVC
+# Add the "/DEBUG" debug flag when compiling with MSVC
 if(MSVC)
     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /DEBUG")
 endif()
 
-# Cria executavel
-add_executable(gerenciador ${SOURCES})
-
+# Create executable
+add_executable(manager ${SOURCES})
+target_link_libraries(manager PRIVATE ${CURSES_LIBRARIES})
