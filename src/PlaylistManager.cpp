@@ -398,11 +398,9 @@ void printHeader() // Print the program header
     std::cout << line.str() << std::endl;
 
     std::cout << std::setfill(' ') << std::setw(static_cast<int>((terminal_width + header.length()) / 2)) << header << std::endl;
-
     std::cout << line.str() << std::endl;
 
     std::cout << std::setfill(' ') << std::setw(static_cast<int>((terminal_width + subheader.length()) / 2)) << subheader << std::endl;
-
     std::cout << line.str() << std::endl;
 
     std::cout << std::endl;
