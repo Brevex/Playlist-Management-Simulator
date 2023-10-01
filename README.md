@@ -1,4 +1,4 @@
-<h1 align = "center"> Playlist Manager Simulator </h1>
+<h1 align = "center"> Playlist Management Simulator </h1>
 
 <br>
 
