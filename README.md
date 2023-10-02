@@ -81,3 +81,5 @@ the program.</p><br>
 	<br><br><p>Plays a system playlist chosen by the user.</p>
 	<img align = "center" src="https://github.com/Brevex/Playlist-Management-Simulator/blob/main/readme%20images/program/run-playlist.png" alt="print from program">
 </details>
+
+<br><h3 align = "center"> - By <a href = "https://www.linkedin.com/in/breno-barbosa-de-oliveira-810866275/" target = "_blank">Breno</a> - </h3>
