@@ -7,8 +7,6 @@ for the subject Programming Language I. This is a program made in C++ that simul
 does not deal with real music files, it just creates objects that represent a song using a title 
 and the name of the artist/band. You can create playlist, manage music and run created playlists.</p>
 
-<img align = "center" src="https://github.com/Brevex/Playlist-Management-Simulator/blob/main/readme%20images/program/program-layout.png" alt="program menu">
-
 <h2> &#128296; Dependencies and Execution </h2><br>
 
 <p>To compile and run this program on your machine, you will need CMake and
@@ -27,6 +25,8 @@ the program.</p><br>
 </p>
 
 <br><h2> &#128161; Program Functions </h2>
+
+<img align = "center" src="https://github.com/Brevex/Playlist-Management-Simulator/blob/main/readme%20images/program/program-layout.png" alt="program menu">
 
 <details>
 	<summary>Add Song to System</summary
