@@ -27,7 +27,7 @@ the program.</p><br>
 <br><h2> &#128161; Program Functions </h2>
 
 <img align = "center" src="https://github.com/Brevex/Playlist-Management-Simulator/blob/main/readme%20images/program/program-layout.png" alt="program menu">
-
+<br>
 <details>
 	<summary>Add Song to System</summary
 	<br><br><p>Add a new song to the system. Repeated songs are not allowed.</p>
