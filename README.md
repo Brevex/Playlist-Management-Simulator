@@ -2,7 +2,7 @@
 
 <h2> &#128269; About the project </h2><br>
 
-<p>A C++ program that simulates a playlist manager. The program 
+<p>A simple C++ program that simulates a playlist manager. The program 
 does not deal with real music files, it just creates objects that represent a song using a title 
 and the name of the artist/band. You can create playlist, manage music and run created playlists.</p>
 
