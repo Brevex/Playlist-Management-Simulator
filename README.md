@@ -2,8 +2,7 @@
 
 <h2> &#128269; About the project </h2><br>
 
-<p> Project carried out during the Bachelor of Information Technology (BTI)
-for the subject Programming Language I. This is a program made in C++ that simulates a playlist manager. The program 
+<p>This is a program made in C++ that simulates a playlist manager. The program 
 does not deal with real music files, it just creates objects that represent a song using a title 
 and the name of the artist/band. You can create playlist, manage music and run created playlists.</p>
 
